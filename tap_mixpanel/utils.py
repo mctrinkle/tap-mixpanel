@@ -67,8 +67,8 @@ def build_event_query_param(events_to_get):
 #Mixpanel API Date format:
 #yyyy-mm-dd
 def convert_date_string_to_mixpanel_format(date_string):
-    date = datetime.strptime(date_string, datetime_format)
-    date = date.strftime(mixpanel_date_format)
+    # date = datetime.strptime(date_string, datetime_format)
+    date = date.strftime(date_string)
 
     return date
 

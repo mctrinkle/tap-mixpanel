@@ -21,13 +21,12 @@ def authenticate(api_key, session):
 
 def convert_events_to_events_schema(events):
     formatted_events = []
-    print(str(events)[:100])
-    for event in events['data']['values']:
+    for event in events:
         formatted_event = {}
-        formatted_event['event'] = event
-        formatted_event['values'] = {}
-        for date in events['data']['values'][event]:
-            formatted_event['values'][date] = events['data']['values'][event][date]
+        formatted_event['event'] = event['event']
+        formatted_event['values'] = event['properties']
+#         for date in events['data']['values'][event]:
+#             formatted_event['values'][date] = events['data']['values'][event][date]
         formatted_events.append(formatted_event)
 
     return formatted_events

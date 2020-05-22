@@ -21,6 +21,7 @@ def authenticate(api_key, session):
 
 def convert_events_to_events_schema(events):
     formatted_events = []
+    print(str(events)[:100])
     for event in events['data']['values']:
         formatted_event = {}
         formatted_event['event'] = event
